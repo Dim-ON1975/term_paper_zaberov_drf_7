@@ -1,0 +1,65 @@
+[
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$tPOzXvdNZ1zC9CEuygWRcL$xQ/0by9a1lBQ1ets3aEK30yLcWfKR8a/nl9tw6oVBTw=",
+        "last_login": "2024-04-09T17:23:54Z",
+        "is_superuser": true,
+        "first_name": "Дмитрий",
+        "last_name": "Заберов",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-04-09T17:23:40Z",
+        "email": "zaberov.dv@yandex.ru",
+        "email_verify": true,
+        "phone": "+7 258 963-58-78",
+        "settlement": "Бородино",
+        "avatar": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$OjbSp7e3PX4ilK6yDjXKqE$w8oBC7IFR9OdMpQmNcAHH+ndkjrFn2DZcIjAqGkRMS4=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Петров",
+        "last_name": "Пётр",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-04-09T17:25:59Z",
+        "email": "zaberov.dv@gmail.com",
+        "email_verify": true,
+        "phone": "+7 589 698-25-48",
+        "settlement": "Сверчков",
+        "avatar": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$8NXWUf68qO6VkcyC74BuS9$8x81ETMhIzeCIB19DZP3NAJ4/UNX9gG407Hl7KUqemk=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Иван",
+        "last_name": "Иванов",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-04-09T17:48:20Z",
+        "email": "zaberov.dv@internet.ru",
+        "email_verify": true,
+        "phone": "+7 625 569-25-45",
+        "settlement": "Бобров",
+        "avatar": "",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
