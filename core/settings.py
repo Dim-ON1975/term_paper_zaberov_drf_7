@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 
     'users',
     'auth_api',
+    'habits'
 ]
 
 MIDDLEWARE = [

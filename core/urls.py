@@ -37,7 +37,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     # мои приложения
     path('admin/', admin.site.urls),
-    # path('lms/', include('lms.urls')),
+    # path('habit/', include('habits.urls')),
     path('', include('users.urls')),
     path('auth/', include('auth_api.urls')),
     # документация
