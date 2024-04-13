@@ -1,0 +1,162 @@
+[
+{
+    "model": "habits.habit",
+    "pk": 1,
+    "fields": {
+        "creator": 2,
+        "link_nice_habit": 7,
+        "place": "в ванной",
+        "time": "20:05:00",
+        "action": "приму душ",
+        "is_pleasant": false,
+        "frequency": 1,
+        "reward": null,
+        "time_to_complete": 120,
+        "is_public": true
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 2,
+    "fields": {
+        "creator": 2,
+        "link_nice_habit": null,
+        "place": "на кухне",
+        "time": "07:00:00",
+        "action": "выпью чашку кофе",
+        "is_pleasant": true,
+        "frequency": 1,
+        "reward": null,
+        "time_to_complete": 120,
+        "is_public": false
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 3,
+    "fields": {
+        "creator": 2,
+        "link_nice_habit": 2,
+        "place": "в гостинной",
+        "time": "07:30:00",
+        "action": "выполню приседание 10 раз",
+        "is_pleasant": false,
+        "frequency": 2,
+        "reward": "съем пирожок",
+        "time_to_complete": 60,
+        "is_public": true
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 4,
+    "fields": {
+        "creator": 2,
+        "link_nice_habit": 2,
+        "place": "в гостинной",
+        "time": "07:30:00",
+        "action": "выполню приседание 5 раз",
+        "is_pleasant": false,
+        "frequency": 3,
+        "reward": "буду барабанить пальцами по столу",
+        "time_to_complete": 120,
+        "is_public": false
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 5,
+    "fields": {
+        "creator": 2,
+        "link_nice_habit": null,
+        "place": "в ванной",
+        "time": "07:10:00",
+        "action": "приму душ",
+        "is_pleasant": true,
+        "frequency": 1,
+        "reward": null,
+        "time_to_complete": 120,
+        "is_public": false
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 6,
+    "fields": {
+        "creator": 2,
+        "link_nice_habit": null,
+        "place": "на кухне",
+        "time": "07:40:00",
+        "action": "съем яблоко",
+        "is_pleasant": true,
+        "frequency": 2,
+        "reward": null,
+        "time_to_complete": 60,
+        "is_public": true
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 7,
+    "fields": {
+        "creator": 2,
+        "link_nice_habit": null,
+        "place": "в ванной",
+        "time": "20:10:00",
+        "action": "приму душ",
+        "is_pleasant": true,
+        "frequency": 1,
+        "reward": null,
+        "time_to_complete": 120,
+        "is_public": true
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 8,
+    "fields": {
+        "creator": 3,
+        "link_nice_habit": null,
+        "place": "на кухне",
+        "time": "07:30:00",
+        "action": "выпью стакан свежевыжатого сока",
+        "is_pleasant": true,
+        "frequency": 1,
+        "reward": null,
+        "time_to_complete": 60,
+        "is_public": false
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 9,
+    "fields": {
+        "creator": 3,
+        "link_nice_habit": 8,
+        "place": "в спальной комнате",
+        "time": "07:00:00",
+        "action": "помедитирую",
+        "is_pleasant": false,
+        "frequency": 1,
+        "reward": null,
+        "time_to_complete": 120,
+        "is_public": true
+    }
+},
+{
+    "model": "habits.habit",
+    "pk": 10,
+    "fields": {
+        "creator": 3,
+        "link_nice_habit": null,
+        "place": "на работе",
+        "time": "17:00:00",
+        "action": "перед уходом отключу все электроприборы от сети, закрою окна",
+        "is_pleasant": false,
+        "frequency": 5,
+        "reward": "съем конфету",
+        "time_to_complete": 120,
+        "is_public": true
+    }
+}
+]
