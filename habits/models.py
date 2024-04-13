@@ -1,25 +1,29 @@
+from django.utils import timezone
+
 from django.db import models
+
+from users.models import User
 
 NULLABLE = {'blank': True, 'null': True}
 
 
 class Habit(models.Model):
-    owner = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='владелец')
+    '''Привычка'''
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Cоздатель привычки', **NULLABLE)
+    link_nice_habit = models.ForeignKey('self', verbose_name='Связанная привычка', on_delete=models.CASCADE, **NULLABLE,
+                                        related_name='habit')
 
-    habit_useful = models.CharField(max_length=255, verbose_name='привычка полезная')
-    is_pleasant = models.BooleanField(default=True, verbose_name='приятная/вознаграждение')
-    habit_pleasant = models.CharField(**NULLABLE, max_length=255, verbose_name='привычка приятная')
-    award = models.CharField(**NULLABLE, max_length=255, verbose_name='вознаграждение')
-
-    place = models.CharField(max_length=255, verbose_name='место')
-    in_time = models.TimeField(verbose_name='время')
-    time_to_complete = models.PositiveIntegerField(default=120, verbose_name='время на выполнение, сек.')
-    frequency = models.PositiveIntegerField(default=1, verbose_name='периодичность, дн.')
-
-    is_public = models.BooleanField(default=False, verbose_name='публичная')
+    place = models.CharField(max_length=200, verbose_name='Место привычки')
+    time = models.TimeField(default=timezone.now, verbose_name='Время привычки')
+    action = models.CharField(max_length=250, verbose_name='Действие привычки')
+    is_pleasant = models.BooleanField(default=False, verbose_name='Признак приятной привычки', **NULLABLE)
+    frequency = models.PositiveSmallIntegerField(default=1, verbose_name='Периодичность')
+    reward = models.CharField(max_length=250, verbose_name='Вознаграждение', **NULLABLE)
+    time_to_complete = models.PositiveSmallIntegerField(default=120, verbose_name='Время на выполнение', **NULLABLE)
+    is_public = models.BooleanField(default=False, verbose_name='Признак публичности')
 
     def __str__(self):
-        return self.habit_useful
+        return f'Я {self.action} в {self.time} {self.place}'
 
     class Meta:
         verbose_name = 'привычка'

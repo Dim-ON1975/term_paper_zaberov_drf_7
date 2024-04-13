@@ -4,9 +4,8 @@ from habits.models import Habit
 
 
 @admin.register(Habit)
-class CourseAdmin(admin.ModelAdmin):
-    list_display = (
-        'owner', 'habit_useful', 'is_pleasant', 'habit_pleasant', 'award', 'place', 'in_time', 'time_to_complete',
-        'frequency', 'is_public',)
-    list_filter = ('owner', 'habit_useful', 'is_pleasant', 'habit_pleasant', 'award', 'place', 'frequency', 'is_public',)
-    search_fields = ('habit_useful', 'habit_pleasant', 'award', 'place',)
+class HabitAdmin(admin.ModelAdmin):
+    list_display = ('id', 'creator', 'link_nice_habit', 'place', 'time', 'action', 'is_pleasant', 'frequency', 'reward',
+                    'time_to_complete', 'is_public')
+    list_filter = ('creator', 'action', 'is_pleasant', 'is_public',)
+    search_fields = ('action', 'is_pleasant', 'reward', 'place',)

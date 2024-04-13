@@ -1,4 +1,3 @@
-from celery import shared_task
 from django.utils import timezone
 from celery.utils.log import get_task_logger
 
@@ -11,8 +10,8 @@ logger = get_task_logger(__name__)
 @app.task
 def user_not_is_active(*args, **kwargs):
     """ Деактивация пользователя, если он не заходил на сайт более месяца """
-    users = User.objects.filter(last_login__lt=(timezone.localtime(timezone.now()) - timezone.timedelta(days=31)),
-                                is_active=True)
+    datetime_calculated = timezone.localtime(timezone.now()) - timezone.timedelta(days=31)
+    users = User.objects.filter(last_login__lt=datetime_calculated, is_active=True)
     if users.exists():
         for user in users:
             if not user.is_superuser:
@@ -21,4 +20,5 @@ def user_not_is_active(*args, **kwargs):
                 logger.info(f'Пользователь {user.email} деактивирован.')
     else:
         users_count = User.objects.all().count()
-        logger.info(f'Всего зарегистрировано {users_count} пользователей(-я). Деактивация пользователей не требуется.')
+        logger.info(f'Всего зарегистрировано {users_count} пользователей(-я). '
+                    f'Деактивация пользователей не требуется.')

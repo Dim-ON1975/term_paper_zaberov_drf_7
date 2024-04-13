@@ -180,7 +180,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     # rest-framework - открытый доступ ко всем данным на сервере
-    # ограничения будем указывать в представлениях и др.
+    # ограничения указаны в представлениях
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
@@ -194,17 +194,19 @@ REST_FRAMEWORK = {
 
 # Настройки срока действия токенов JWT
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=50),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
 # Настройки CORS
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',  # Замените на адрес вашего фронтенд-сервера
+    # Замените на адрес вашего фронтенд-сервера
+    'http://localhost:8000',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://read-and-write.example.com",  # Замените на адрес вашего фронтенд-сервера
+    # Замените на адрес вашего фронтенд-сервера
+    "https://read-and-write.example.com",
     # и добавьте адрес бэкенд-сервера
 ]
 
