@@ -7,7 +7,7 @@ NULLABLE = {'blank': True, 'null': True}
 class User(AbstractUser):
     username = None
     email = models.EmailField(unique=True, verbose_name='электронная почта')
-    id_telegram = models.IntegerField(verbose_name="Телеграм ID", **NULLABLE)
+    id_telegram = models.CharField(max_length=50, verbose_name="Телеграм ID", **NULLABLE)
     avatar = models.ImageField(upload_to='users/%Y/%m/%d/', **NULLABLE, verbose_name='аватар')
 
     USERNAME_FIELD = "email"

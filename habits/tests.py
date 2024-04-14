@@ -63,6 +63,42 @@ class HabitTestCase(APITestCase):
             Habit.objects.all().exists()
         )
 
+        # Тестирование ошибки ввода данных о периодичности закрепления привычек
+        data = {
+            'place': 'Дом',
+            'time': "07:00:00",
+            'action': 'Пить чай',
+            'is_pleasant': False,
+            'frequency': 8,
+            'time_to_complete': 120
+        }
+
+        habit_create_url = reverse('habits:habit_create')
+        response = self.client.post(habit_create_url, data=data)
+
+        self.assertEqual(
+            response.json(),
+            {'non_field_errors': ['Нельзя выполнять привычку реже, чем 1 раз в 7 дней.']},
+        )
+
+        # Тестирование ошибки ввода данных о продолжительности закрепления привычек
+        data = {
+            'place': 'Дом',
+            'time': "07:00:00",
+            'action': 'Пить чай',
+            'is_pleasant': False,
+            'frequency': 7,
+            'time_to_complete': 140
+        }
+
+        habit_create_url = reverse('habits:habit_create')
+        response = self.client.post(habit_create_url, data=data)
+
+        self.assertEqual(
+            response.json(),
+            {'non_field_errors': ['Время выполнения не должно превышать 120 сек и не должно быть равно 0.']},
+        )
+
     def test_list_habit(self):
         """ Тест READ LIST habit """
 

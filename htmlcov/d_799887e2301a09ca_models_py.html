@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="d_799887e2301a09ca_paginators_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.4.4">coverage.py v7.4.4</a>,
-            created at 2024-04-14 12:26 +0300
+            created at 2024-04-14 17:41 +0300
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"/>
@@ -90,7 +90,7 @@
     <p class="pln"><span class="n"><a id="t8" href="#t8">8</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t9" href="#t9">9</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t10" href="#t10">10</a></span><span class="t"><span class="key">class</span> <span class="nam">Habit</span><span class="op">(</span><span class="nam">models</span><span class="op">.</span><span class="nam">Model</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t11" href="#t11">11</a></span><span class="t">    <span class="str">'''&#1055;&#1088;&#1080;&#1074;&#1099;&#1095;&#1082;&#1072;'''</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t11" href="#t11">11</a></span><span class="t">    <span class="str">""" &#1055;&#1088;&#1080;&#1074;&#1099;&#1095;&#1082;&#1072; """</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t12" href="#t12">12</a></span><span class="t">    <span class="nam">creator</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">ForeignKey</span><span class="op">(</span><span class="nam">User</span><span class="op">,</span> <span class="nam">on_delete</span><span class="op">=</span><span class="nam">models</span><span class="op">.</span><span class="nam">CASCADE</span><span class="op">,</span> <span class="nam">verbose_name</span><span class="op">=</span><span class="str">'C&#1086;&#1079;&#1076;&#1072;&#1090;&#1077;&#1083;&#1100; &#1087;&#1088;&#1080;&#1074;&#1099;&#1095;&#1082;&#1080;'</span><span class="op">,</span> <span class="op">**</span><span class="nam">NULLABLE</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t13" href="#t13">13</a></span><span class="t">    <span class="nam">link_nice_habit</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">ForeignKey</span><span class="op">(</span><span class="str">'self'</span><span class="op">,</span> <span class="nam">verbose_name</span><span class="op">=</span><span class="str">'&#1057;&#1074;&#1103;&#1079;&#1072;&#1085;&#1085;&#1072;&#1103; &#1087;&#1088;&#1080;&#1074;&#1099;&#1095;&#1082;&#1072;'</span><span class="op">,</span> <span class="nam">on_delete</span><span class="op">=</span><span class="nam">models</span><span class="op">.</span><span class="nam">CASCADE</span><span class="op">,</span> <span class="op">**</span><span class="nam">NULLABLE</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t14" href="#t14">14</a></span><span class="t">                                        <span class="nam">related_name</span><span class="op">=</span><span class="str">'habit'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -105,7 +105,7 @@
     <p class="run"><span class="n"><a id="t23" href="#t23">23</a></span><span class="t">    <span class="nam">is_public</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">BooleanField</span><span class="op">(</span><span class="nam">default</span><span class="op">=</span><span class="key">False</span><span class="op">,</span> <span class="nam">verbose_name</span><span class="op">=</span><span class="str">'&#1055;&#1088;&#1080;&#1079;&#1085;&#1072;&#1082; &#1087;&#1091;&#1073;&#1083;&#1080;&#1095;&#1085;&#1086;&#1089;&#1090;&#1080;'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t24" href="#t24">24</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t25" href="#t25">25</a></span><span class="t">    <span class="key">def</span> <span class="nam">__str__</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t">        <span class="key">return</span> <span class="str">f'&#1071; {self.action} &#1074; {self.time} {self.place}'</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t">        <span class="key">return</span> <span class="str">f'{self.action} &#1074; {self.time} {self.place}'</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t28" href="#t28">28</a></span><span class="t">    <span class="key">class</span> <span class="nam">Meta</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t">        <span class="nam">verbose_name</span> <span class="op">=</span> <span class="str">'&#1087;&#1088;&#1080;&#1074;&#1099;&#1095;&#1082;&#1072;'</span>&nbsp;</span><span class="r"></span></p>
@@ -119,7 +119,7 @@
             <a id="nextFileLink" class="nav" href="d_799887e2301a09ca_paginators_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.4.4">coverage.py v7.4.4</a>,
-            created at 2024-04-14 12:26 +0300
+            created at 2024-04-14 17:41 +0300
         </p>
     </div>
 </footer>

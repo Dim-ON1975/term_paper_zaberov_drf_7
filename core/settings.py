@@ -138,7 +138,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -233,10 +233,10 @@ CElERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 CELERY_RESULT_BACKEND = "redis://" + os.getenv('REDIS_HOST') + ":" + os.getenv('REDIS_PORT') + "/0"
 CELERY_BEAT_SCHEDULER = os.getenv('CELERY_BEAT_SCHEDULER')
 CELERY_BEAT_SCHEDULE = {
-    # "send_mail_course_monitoring": {
-    #     "task": "lms.tasks.send_mail_course_monitoring",
-    #     "schedule": crontab(minute='0', hour='21', day_of_week='*'),
-    # },
+    "send_message_habit_telegram": {
+        "task": "habits.tasks.send_message_habit_telegram",
+        "schedule": crontab(minute='*/1'),
+    },
     "user_not_is_active": {
         "task": "users.tasks.user_not_is_active",
         "schedule": crontab(minute='0', hour='21', day_of_week='*'),
@@ -246,3 +246,7 @@ CELERY_ACCEPT_CONTENT = ['application/json', 'json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Europe/Moscow'
+
+# Telegram
+TG_BOT_NAME = os.getenv('TG_NAME')
+TG_API_KEY = os.getenv('TG_API_KEY')

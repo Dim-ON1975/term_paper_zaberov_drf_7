@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Coverage for habits\validators.py: 83%</title>
+    <title>Coverage for habits\validators.py: 89%</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="coverage_html.js" defer></script>
@@ -12,7 +12,7 @@
     <div class="content">
         <h1>
             <span class="text">Coverage for </span><b>habits\validators.py</b>:
-            <span class="pc_cov">83%</span>
+            <span class="pc_cov">89%</span>
         </h1>
         <aside id="help_panel_wrapper">
             <input id="help_panel_state" type="checkbox">
@@ -55,8 +55,8 @@
         </aside>
         <h2>
             <span class="text">35 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">29<span class="text"> run</span></button>
-            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">6<span class="text"> missing</span></button>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">31<span class="text"> run</span></button>
+            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">4<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
         <p class="text">
@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="d_799887e2301a09ca_views_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.4.4">coverage.py v7.4.4</a>,
-            created at 2024-04-14 12:26 +0300
+            created at 2024-04-14 17:41 +0300
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"/>
@@ -130,7 +130,7 @@
     <p class="run"><span class="n"><a id="t48" href="#t48">48</a></span><span class="t">    <span class="key">def</span> <span class="nam">__call__</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">value</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t49" href="#t49">49</a></span><span class="t">        <span class="nam">time_to_complete</span> <span class="op">=</span> <span class="nam">value</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">field</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t50" href="#t50">50</a></span><span class="t">        <span class="key">if</span> <span class="nam">time_to_complete</span> <span class="op">></span> <span class="num">120</span> <span class="key">or</span> <span class="nam">time_to_complete</span> <span class="op">&lt;=</span> <span class="num">0</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t51" href="#t51">51</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValidationError</span><span class="op">(</span><span class="str">'&#1042;&#1088;&#1077;&#1084;&#1103; &#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1087;&#1088;&#1077;&#1074;&#1099;&#1096;&#1072;&#1090;&#1100; 120 &#1089;&#1077;&#1082; &#1080; &#1085;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1073;&#1099;&#1090;&#1100; &#1088;&#1072;&#1074;&#1085;&#1086; 0.'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t51" href="#t51">51</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValidationError</span><span class="op">(</span><span class="str">'&#1042;&#1088;&#1077;&#1084;&#1103; &#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1087;&#1088;&#1077;&#1074;&#1099;&#1096;&#1072;&#1090;&#1100; 120 &#1089;&#1077;&#1082; &#1080; &#1085;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1073;&#1099;&#1090;&#1100; &#1088;&#1072;&#1074;&#1085;&#1086; 0.'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t52" href="#t52">52</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t53" href="#t53">53</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t54" href="#t54">54</a></span><span class="t"><span class="key">class</span> <span class="nam">FrequencyHabitValidator</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
@@ -142,7 +142,7 @@
     <p class="run"><span class="n"><a id="t60" href="#t60">60</a></span><span class="t">    <span class="key">def</span> <span class="nam">__call__</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">value</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t61" href="#t61">61</a></span><span class="t">        <span class="nam">tmp_val</span> <span class="op">=</span> <span class="nam">value</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">field</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t62" href="#t62">62</a></span><span class="t">        <span class="key">if</span> <span class="nam">tmp_val</span> <span class="op">></span> <span class="num">7</span> <span class="key">or</span> <span class="nam">tmp_val</span> <span class="op">&lt;=</span> <span class="num">0</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t63" href="#t63">63</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValidationError</span><span class="op">(</span><span class="str">'&#1053;&#1077;&#1083;&#1100;&#1079;&#1103; &#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1103;&#1090;&#1100; &#1087;&#1088;&#1080;&#1074;&#1099;&#1095;&#1082;&#1091; &#1088;&#1077;&#1078;&#1077;, &#1095;&#1077;&#1084; 1 &#1088;&#1072;&#1079; &#1074; 7 &#1076;&#1085;&#1077;&#1081;.'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t63" href="#t63">63</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValidationError</span><span class="op">(</span><span class="str">'&#1053;&#1077;&#1083;&#1100;&#1079;&#1103; &#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1103;&#1090;&#1100; &#1087;&#1088;&#1080;&#1074;&#1099;&#1095;&#1082;&#1091; &#1088;&#1077;&#1078;&#1077;, &#1095;&#1077;&#1084; 1 &#1088;&#1072;&#1079; &#1074; 7 &#1076;&#1085;&#1077;&#1081;.'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -152,7 +152,7 @@
             <a id="nextFileLink" class="nav" href="d_799887e2301a09ca_views_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.4.4">coverage.py v7.4.4</a>,
-            created at 2024-04-14 12:26 +0300
+            created at 2024-04-14 17:41 +0300
         </p>
     </div>
 </footer>

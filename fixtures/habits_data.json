@@ -5,9 +5,9 @@
     "fields": {
         "creator": 2,
         "link_nice_habit": 7,
-        "place": "в ванной",
-        "time": "20:05:00",
-        "action": "приму душ",
+        "place": "в гардеробной",
+        "time": "16:40:00",
+        "action": "подготовлю одежду и обувь на утро",
         "is_pleasant": false,
         "frequency": 1,
         "reward": null,
@@ -22,7 +22,7 @@
         "creator": 2,
         "link_nice_habit": null,
         "place": "на кухне",
-        "time": "07:00:00",
+        "time": "07:40:00",
         "action": "выпью чашку кофе",
         "is_pleasant": true,
         "frequency": 1,
@@ -42,7 +42,7 @@
         "action": "выполню приседание 10 раз",
         "is_pleasant": false,
         "frequency": 2,
-        "reward": "съем пирожок",
+        "reward": null,
         "time_to_complete": 60,
         "is_public": true
     }
@@ -52,9 +52,9 @@
     "pk": 4,
     "fields": {
         "creator": 2,
-        "link_nice_habit": 2,
+        "link_nice_habit": null,
         "place": "в гостинной",
-        "time": "07:30:00",
+        "time": "16:45:00",
         "action": "выполню приседание 5 раз",
         "is_pleasant": false,
         "frequency": 3,
@@ -69,7 +69,7 @@
     "fields": {
         "creator": 2,
         "link_nice_habit": null,
-        "place": "в ванной",
+        "place": "в ванной комнате",
         "time": "07:10:00",
         "action": "приму душ",
         "is_pleasant": true,
@@ -101,8 +101,8 @@
     "fields": {
         "creator": 2,
         "link_nice_habit": null,
-        "place": "в ванной",
-        "time": "20:10:00",
+        "place": "в ванной комнате",
+        "time": "16:42:00",
         "action": "приму душ",
         "is_pleasant": true,
         "frequency": 1,
@@ -153,7 +153,7 @@
         "time": "17:00:00",
         "action": "перед уходом отключу все электроприборы от сети, закрою окна",
         "is_pleasant": false,
-        "frequency": 5,
+        "frequency": 1,
         "reward": "съем конфету",
         "time_to_complete": 120,
         "is_public": true

@@ -8,7 +8,7 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 class Habit(models.Model):
-    '''Привычка'''
+    """ Привычка """
     creator = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Cоздатель привычки', **NULLABLE)
     link_nice_habit = models.ForeignKey('self', verbose_name='Связанная привычка', on_delete=models.CASCADE, **NULLABLE,
                                         related_name='habit')
@@ -23,7 +23,7 @@ class Habit(models.Model):
     is_public = models.BooleanField(default=False, verbose_name='Признак публичности')
 
     def __str__(self):
-        return f'Я {self.action} в {self.time} {self.place}'
+        return f'{self.action} в {self.time} {self.place}'
 
     class Meta:
         verbose_name = 'привычка'
