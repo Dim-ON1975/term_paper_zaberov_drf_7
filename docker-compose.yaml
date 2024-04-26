@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres                                     # готовый образ
+    container_name: postgres_habits                     # имя контейнера (удобно использовать для отладки кода)
+    restart: always                                     # всегда перезагрузка в случае "падения" (на продакшене не используют)
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata           # имя переменной окружения: путь к переменной окружения
+    env_file:
+      - .env                                            # секретные данные (db нужен пароль доступа к БД)
+    ports:
+      - '5432:5432'                                     # порты: 5432 - внешний, 5432 - внутренний
+    healthcheck:                                        # если контейнер "здоров", то запускаем команды
+      test: [ 'CMD-SHELL', 'pg_isready -U postgres' ]   # тестовая команда, которая не должна возвращать ошибку
+      interval: 5s                                      # интервал между перезапусками 5 сек.
+      timeout: 5s                                       # ожидание 5 сек.
+      retries: 5                                        # максимальное количество попыток
+    volumes:                                            # маппинг томов
+      - ./pg_data:/var/lib/postgresql/data/pgdata       # маппинг данных в папке pg_data
+
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+
+  app:
+    build: .                                            # собрать контейнер из Dockerfile, который в корневой директории
+    container_name: habits_drf
+    tty: true                                           # запуск оболочки терминала, далее - выполнение команд
+    command: bash -c 'python manage.py migrate && python manage.py runserver 0.0.0.0:8000'
+    ports:
+      - '8000:8000'
+    env_file:
+      - .env
+    volumes:
+      - .:/code                                         # маппинг изменений в проекте
+    depends_on:                                         # описание зависимостей
+      db:
+        condition: service_healthy                      # запуск контейнера app, если db запустился без ошибок
+
+  celery:
+    build: .
+    tty: true
+    command: celery -A core worker -l INFO
+    depends_on:
+      - redis
+      - app
+
+  celery-beat:
+    build: .
+    tty: true
+    command: celery -A core.celery beat -l INFO -S django
+    depends_on:
+      - db
+      - redis
+      - app
+
+
+# Для БД volumes - pg_data
+volumes:
+  pg_data:
+
+
+
+
+
